@@ -32,7 +32,7 @@ List<TravelModel> travelList = [
           'New York City comprises 5 boroughs sitting where the Hudson River meets the Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the world’s major commercial, financial and cultural centers. Its iconic sites include skyscrapers such as the Empire State Building and sprawling Central Park.',
       price: '5000'),
   TravelModel(
-      image: 'assets/images/Tehran.jpg',
+      image: 'assets/images/Tehran2.jpg',
       name: 'Tehran City',
       location: "Tehran, Iran",
       distance: '7',

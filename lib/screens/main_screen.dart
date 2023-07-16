@@ -28,16 +28,15 @@ class _MainScreenState extends State<MainScreen> {
             Container(
               width: double.infinity,
               height: size.height / 1.7,
-              color: Colors.amber,
               child: Stack(
                 children: [
                   BannerImage(selectedIndex: _selectedIndex),
                   MyAppBar(),
                   Positioned(
                     right: 5,
-                    top: size.height/10,
+                    top: size.height / 10,
                     child: SizedBox(
-                      width: size.height/8,
+                      width: size.height / 8,
                       height: double.maxFinite,
                       child: ListView.builder(
                           itemCount: travelList.length,
@@ -46,7 +45,8 @@ class _MainScreenState extends State<MainScreen> {
                                 selectedIndex: _selectedIndex,
                                 index: index,
                                 imageTap: () {
-                                  developer.log('image tapping', name: 'ImageTap');
+                                  developer.log('image tapping',
+                                      name: 'ImageTap');
                                   setState(() {
                                     setState(() {
                                       _selectedIndex = index;
@@ -56,7 +56,41 @@ class _MainScreenState extends State<MainScreen> {
                           }),
                     ),
                   ),
-                  
+                  Positioned(
+                    left: size.width / 12,
+                    bottom: size.height / 7.5,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          travelList[_selectedIndex].name,
+                          style: TextStyle(
+                            color: (travelList[_selectedIndex].name == 'Paris')
+                                ? Colors.black
+                                : Colors.white,
+                            fontSize: 22,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        SizedBox(
+                          height: size.height / 200,
+                        ),
+                        Row(
+                          children: [
+                            Icon(Icons.place, color: Colors.white, size: 20),
+                            Text(
+                              travelList[_selectedIndex].location,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
