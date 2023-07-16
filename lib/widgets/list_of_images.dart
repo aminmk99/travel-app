@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../model/travel_model.dart';
 
+// ignore: must_be_immutable
 class ListOfImages extends StatelessWidget {
    ListOfImages({required this.selectedIndex});
   

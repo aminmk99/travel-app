@@ -3,6 +3,7 @@ import 'package:travel_app/widgets/banner_image.dart';
 import 'package:travel_app/widgets/list_of_images.dart';
 import 'package:travel_app/widgets/my_app_bar.dart';
 
+// ignore: must_be_immutable
 class MainScreen extends StatelessWidget {
   MainScreen({Key? key}) : super(key: key);
 
@@ -17,7 +18,6 @@ class MainScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // UpperWidget(),
             Container(
               width: double.infinity,
               height: size.height / 1.7,
@@ -31,10 +31,10 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-      child: Container(
-        color: Color.fromARGB(250, 197, 7, 255),
-      ),
-    ),
+              child: Container(
+                color: Color.fromARGB(250, 197, 7, 255),
+              ),
+            ),
           ],
         ),
       ),

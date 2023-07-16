@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:travel_app/model/travel_model.dart';
 
+// ignore: must_be_immutable
 class BannerImage extends StatelessWidget {
   BannerImage({required this.selectedIndex});
 
