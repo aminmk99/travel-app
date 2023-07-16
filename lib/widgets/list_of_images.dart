@@ -4,7 +4,10 @@ import '../model/travel_model.dart';
 
 // ignore: must_be_immutable
 class ListOfImages extends StatelessWidget {
-  ListOfImages({required this.selectedIndex, required this.index, required this.imageTap});
+  ListOfImages(
+      {required this.selectedIndex,
+      required this.index,
+      required this.imageTap});
 
   int selectedIndex;
   int index;
@@ -27,14 +30,18 @@ class ListOfImages extends StatelessWidget {
                       image: AssetImage(travelList[index].image),
                       fit: BoxFit.fill,
                     ),
-                    border: Border.all(color: Colors.white, width: 2),
-                    borderRadius: BorderRadius.circular(10)),
+                    border: Border.all(
+                        color: (selectedIndex == index)
+                            ? Colors.white54
+                            : Colors.white,
+                        width: 3),
+                    borderRadius: BorderRadius.circular(20)),
                 duration: Duration(milliseconds: 500),
                 width: (selectedIndex == index)
-                    ? size.height / 8.5
+                    ? size.height / 9
                     : size.height / 11.4,
                 height: (selectedIndex == index)
-                    ? size.height / 8.5
+                    ? size.height / 9
                     : size.height / 11.4,
               ),
             ),

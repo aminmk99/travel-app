@@ -33,21 +33,30 @@ class _MainScreenState extends State<MainScreen> {
                 children: [
                   BannerImage(selectedIndex: _selectedIndex),
                   MyAppBar(),
-                  ListView.builder(
-                      itemCount: travelList.length,
-                      itemBuilder: (context, index) {
-                        return ListOfImages(
-                            selectedIndex: _selectedIndex,
-                            index: index,
-                            imageTap: () {
-                              developer.log('image tapping', name: 'ImageTap');
-                              setState(() {
-                                setState(() {
-                                  _selectedIndex = index;
+                  Positioned(
+                    right: 5,
+                    top: size.height/10,
+                    child: SizedBox(
+                      width: size.height/8,
+                      height: double.maxFinite,
+                      child: ListView.builder(
+                          itemCount: travelList.length,
+                          itemBuilder: (context, index) {
+                            return ListOfImages(
+                                selectedIndex: _selectedIndex,
+                                index: index,
+                                imageTap: () {
+                                  developer.log('image tapping', name: 'ImageTap');
+                                  setState(() {
+                                    setState(() {
+                                      _selectedIndex = index;
+                                    });
+                                  });
                                 });
-                              });
-                            });
-                      }),
+                          }),
+                    ),
+                  ),
+                  
                 ],
               ),
             ),
