@@ -2,11 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/banner_image.dart';
 import 'package:travel_app/widgets/list_of_images.dart';
 import 'package:travel_app/widgets/my_app_bar.dart';
+import '../model/travel_model.dart';
+import 'dart:developer' as developer;
 
 // ignore: must_be_immutable
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   double magnitude = 13;
@@ -26,7 +33,21 @@ class MainScreen extends StatelessWidget {
                 children: [
                   BannerImage(selectedIndex: _selectedIndex),
                   MyAppBar(),
-                  ListOfImages(selectedIndex: _selectedIndex)
+                  ListView.builder(
+                      itemCount: travelList.length,
+                      itemBuilder: (context, index) {
+                        return ListOfImages(
+                            selectedIndex: _selectedIndex,
+                            index: index,
+                            imageTap: () {
+                              developer.log('image tapping', name: 'ImageTap');
+                              setState(() {
+                                setState(() {
+                                  _selectedIndex = index;
+                                });
+                              });
+                            });
+                      }),
                 ],
               ),
             ),
