@@ -19,7 +19,7 @@ class ListOfImages extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(vertical: 8),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: InkWell(
@@ -31,10 +31,11 @@ class ListOfImages extends StatelessWidget {
                       fit: BoxFit.fill,
                     ),
                     border: Border.all(
-                        color: (selectedIndex == index)
-                            ? Colors.white54
-                            : Colors.white,
-                        width: 3),
+                      color: (selectedIndex == index)
+                          ? Colors.white54
+                          : Colors.white,
+                      width: 3,
+                    ),
                     borderRadius: BorderRadius.circular(20)),
                 duration: Duration(milliseconds: 500),
                 width: (selectedIndex == index)
