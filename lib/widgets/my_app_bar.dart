@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:travel_app/widgets/upper_button.dart';
+import 'package:travel_app/widgets/buttons.dart';
 
 class MyAppBar extends StatelessWidget {
   const MyAppBar({Key? key}) : super(key: key);
@@ -20,15 +21,21 @@ class MyAppBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  UpperButton(
+                  Buttons(
                       upperIcon: CupertinoIcons.back,
+                      iconColor: Colors.black,
+                      buttonColor: Color.fromARGB(140, 255, 255, 255),
+                      magnitude: 15,
                       upperFunc: () {
                         print("back button");
                         print(size.height);
                         print(size.width);
                       }),
-                  UpperButton(
+                  Buttons(
+                    iconColor: Colors.black,
                       upperIcon: CupertinoIcons.heart,
+                      buttonColor: Color.fromARGB(140, 255, 255, 255),
+                      magnitude: 15,
                       upperFunc: () {
                         print("heart button");
                       })

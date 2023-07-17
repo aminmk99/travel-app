@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/banner_image.dart';
 import 'package:travel_app/widgets/description.dart';
 import 'package:travel_app/widgets/list_of_images.dart';
 import 'package:travel_app/widgets/location_of_cities.dart';
 import 'package:travel_app/widgets/my_app_bar.dart';
+import 'package:travel_app/widgets/buttons.dart';
 import '../model/travel_model.dart';
 import 'dart:developer' as developer;
 
@@ -101,11 +103,45 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ),
                     SizedBox(
-                      height: size.height/45,
+                      height: size.height / 45,
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 35),
+                        child: Description(selectedIndex: _selectedIndex)),
+                    SizedBox(
+                      height: size.height / 40,
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 35),
-                      child: Description(selectedIndex: _selectedIndex)
+                      child: Row(
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(top: 10),
+                                child: Text('Total Price',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        color: Colors.grey,
+                                        fontWeight: FontWeight.w400)),
+                              ),
+                              Text(
+                                '\$' + "${travelList[_selectedIndex].price}",
+                                style: TextStyle(
+                                    fontSize: 30, fontWeight: FontWeight.bold),
+                              )
+                            ],
+                          ),
+                          Spacer(),
+                          Buttons(
+                              iconColor: Colors.white,
+                              buttonColor: Colors.black,
+                              upperIcon: CupertinoIcons.forward,
+                              upperFunc: () => print('bottom button'),
+                              magnitude: 10)
+                        ],
+                      ),
                     ),
                   ],
                 ),
