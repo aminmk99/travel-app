@@ -6,7 +6,6 @@ import 'package:travel_app/widgets/location_of_cities.dart';
 import 'package:travel_app/widgets/my_app_bar.dart';
 import '../model/travel_model.dart';
 import 'dart:developer' as developer;
-import 'package:expandable_text/expandable_text.dart';
 
 import '../widgets/my_card.dart';
 

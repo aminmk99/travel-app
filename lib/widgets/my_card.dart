@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../model/travel_model.dart';
-
 // ignore: must_be_immutable
 class MyCard extends StatelessWidget {
   MyCard(

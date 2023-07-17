@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../model/travel_model.dart';
 
+// ignore: must_be_immutable
 class LocOfCities extends StatelessWidget {
   LocOfCities({required this.selectedIndex});
 
