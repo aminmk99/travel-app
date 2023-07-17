@@ -36,7 +36,7 @@ class ListOfImages extends StatelessWidget {
                           : Colors.white,
                       width: 3,
                     ),
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(27)),
                 duration: Duration(milliseconds: 500),
                 width: (selectedIndex == index)
                     ? size.height / 9

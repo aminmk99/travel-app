@@ -10,7 +10,7 @@ class UpperButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    double magnitude = 13;
+    double magnitude = 15;
     return SizedBox(
       height: size.height / magnitude,
       width: size.height / magnitude,

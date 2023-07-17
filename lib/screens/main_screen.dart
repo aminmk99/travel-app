@@ -6,6 +6,8 @@ import 'package:travel_app/widgets/my_app_bar.dart';
 import '../model/travel_model.dart';
 import 'dart:developer' as developer;
 
+import '../widgets/my_card.dart';
+
 // ignore: must_be_immutable
 class MainScreen extends StatefulWidget {
   MainScreen({Key? key}) : super(key: key);
@@ -28,7 +30,7 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             Container(
               width: double.infinity,
-              height: size.height / 1.7,
+              height: size.height / 1.8,
               child: Stack(
                 children: [
                   BannerImage(selectedIndex: _selectedIndex),
@@ -60,16 +62,42 @@ class _MainScreenState extends State<MainScreen> {
                   ),
                   //Name of city and its location
                   Positioned(
-                    left: size.width / 12,
-                    bottom: size.height / 7.5,
-                    child: LocOfCities(selectedIndex: _selectedIndex)
-                  ),
+                      left: size.width / 12,
+                      bottom: size.height / 7.5,
+                      child: LocOfCities(selectedIndex: _selectedIndex)),
                 ],
               ),
             ),
             Expanded(
               child: Container(
-                color: Color.fromARGB(250, 197, 7, 255),
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 35),
+                      child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          MyCard(
+                            selectedIndex: _selectedIndex,
+                            firstText: 'Distance',
+                            secText: '${travelList[_selectedIndex].distance}Km',
+                          ),
+                          MyCard(
+                            selectedIndex: _selectedIndex,
+                            firstText: 'Temp',
+                            secText: '${travelList[_selectedIndex].temp}° C',
+                          ),
+                          MyCard(
+                            selectedIndex: _selectedIndex,
+                            firstText: 'Rating',
+                            secText: '${travelList[_selectedIndex].rating}',
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
