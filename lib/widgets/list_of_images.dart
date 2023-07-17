@@ -16,6 +16,8 @@ class ListOfImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    double imageSize = 11.8; 
+    double bigImageSize = 9.5; 
     return Column(
       children: [
         Padding(
@@ -39,11 +41,11 @@ class ListOfImages extends StatelessWidget {
                     borderRadius: BorderRadius.circular(27)),
                 duration: Duration(milliseconds: 500),
                 width: (selectedIndex == index)
-                    ? size.height / 9
-                    : size.height / 11.4,
+                    ? size.height / bigImageSize
+                    : size.height / imageSize,
                 height: (selectedIndex == index)
-                    ? size.height / 9
-                    : size.height / 11.4,
+                    ? size.height / bigImageSize
+                    : size.height / imageSize,
               ),
             ),
           ),

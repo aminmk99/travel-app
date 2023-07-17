@@ -12,7 +12,7 @@ class BannerImage extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Container(
       width: double.infinity,
-      height: size.height / 2.08,
+      height: size.height / 2.2,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(60),

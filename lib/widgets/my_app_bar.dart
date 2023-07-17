@@ -24,6 +24,8 @@ class MyAppBar extends StatelessWidget {
                       upperIcon: CupertinoIcons.back,
                       upperFunc: () {
                         print("back button");
+                        print(size.height);
+                        print(size.width);
                       }),
                   UpperButton(
                       upperIcon: CupertinoIcons.heart,
