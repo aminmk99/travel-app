@@ -21,7 +21,7 @@ class ListOfImages extends StatelessWidget {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: (size.height > 650)? const EdgeInsets.symmetric(vertical: 8) : EdgeInsets.symmetric(vertical: 5),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: InkWell(

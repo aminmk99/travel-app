@@ -26,11 +26,18 @@ class MyCard extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text(firstText, style: TextStyle(fontSize: 12)),
+                Text(firstText,
+                    style: (size.height > 650)
+                        ? TextStyle(fontSize: 12)
+                        : TextStyle(fontSize: 9)),
                 Text(secText,
-                    style: TextStyle(
-                        fontSize: 19,
-                        color: Color.fromARGB(255, 121, 204, 222)))
+                    style: (size.height > 650)
+                        ? TextStyle(
+                            fontSize: 19,
+                            color: Color.fromARGB(255, 121, 204, 222))
+                        : TextStyle(
+                            fontSize: 18,
+                            color: Color.fromARGB(255, 121, 204, 222)))
               ],
             )));
   }

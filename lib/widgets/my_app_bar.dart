@@ -22,21 +22,21 @@ class MyAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Buttons(
-                      upperIcon: CupertinoIcons.back,
+                      icon: CupertinoIcons.back,
                       iconColor: Colors.black,
                       buttonColor: Color.fromARGB(140, 255, 255, 255),
                       magnitude: 15,
-                      upperFunc: () {
+                      function: () {
                         print("back button");
                         print(size.height);
                         print(size.width);
                       }),
                   Buttons(
                     iconColor: Colors.black,
-                      upperIcon: CupertinoIcons.heart,
+                      icon: CupertinoIcons.heart,
                       buttonColor: Color.fromARGB(140, 255, 255, 255),
                       magnitude: 15,
-                      upperFunc: () {
+                      function: () {
                         print("heart button");
                       })
                 ],

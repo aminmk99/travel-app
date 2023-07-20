@@ -4,6 +4,7 @@ import 'package:travel_app/widgets/banner_image.dart';
 import 'package:travel_app/widgets/description.dart';
 import 'package:travel_app/widgets/list_of_images.dart';
 import 'package:travel_app/widgets/location_of_cities.dart';
+import 'package:travel_app/widgets/my_alert_dialog.dart';
 import 'package:travel_app/widgets/my_app_bar.dart';
 import 'package:travel_app/widgets/buttons.dart';
 import '../model/travel_model.dart';
@@ -32,9 +33,11 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: ClampingScrollPhysics(),
           child: Column(
             children: [
               Container(
+                color: Colors.white,
                 width: double.infinity,
                 height: size.height / 1.88,
                 child: Stack(
@@ -74,6 +77,7 @@ class _MainScreenState extends State<MainScreen> {
                   ],
                 ),
               ),
+              //second half
               Container(
                 color: Colors.white,
                 child: Column(
@@ -111,6 +115,7 @@ class _MainScreenState extends State<MainScreen> {
                     SizedBox(
                       height: size.height / 40,
                     ),
+                    //bottom widgets
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 35),
                       child: Row(
@@ -137,12 +142,13 @@ class _MainScreenState extends State<MainScreen> {
                           Buttons(
                               iconColor: Colors.white,
                               buttonColor: Colors.black,
-                              upperIcon: CupertinoIcons.forward,
-                              upperFunc: () => print('bottom button'),
+                              icon: CupertinoIcons.forward,
+                              function: () => bottomButtonFunc(),
                               magnitude: 10)
                         ],
                       ),
                     ),
+                    SizedBox(height: 10),
                   ],
                 ),
               ),
@@ -151,5 +157,13 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ),
     );
+  }
+
+  bottomButtonFunc() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return MyAlertDialog();
+        });
   }
 }

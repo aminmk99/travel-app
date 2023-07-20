@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class Buttons extends StatelessWidget {
   Buttons({
-    required this.upperIcon,
-    required this.upperFunc,
+    required this.icon,
+    required this.function,
     required this.magnitude,
     required this.buttonColor,
     required this.iconColor,
   });
 
-  IconData upperIcon;
-  VoidCallback upperFunc;
+  IconData icon;
+  VoidCallback function;
   double magnitude;
   Color buttonColor;
   Color iconColor;
@@ -24,8 +24,8 @@ class Buttons extends StatelessWidget {
       width: size.height / magnitude,
       child: FittedBox(
           child: FloatingActionButton(
-        onPressed: upperFunc,
-        child: Icon(upperIcon, color: iconColor, size: 30),
+        onPressed: function,
+        child: Icon(icon, color: iconColor, size: 30),
         backgroundColor: buttonColor,
       )),
     );
